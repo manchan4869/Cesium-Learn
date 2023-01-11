@@ -1,0 +1,18 @@
+{
+  "name": "cesium-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "stylus": "^0.59.0",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@geoblocks/cesium-first-person-mode": "^0.1.2"
+  }
+}
