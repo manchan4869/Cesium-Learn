@@ -1,4 +1,7 @@
 {
     "editor.tabSize": 2,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 18,
+    "commentTranslate.hover.enabled": true,
+    "commentTranslate.source": "Bing"
 }
