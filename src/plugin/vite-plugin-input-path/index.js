@@ -7,7 +7,6 @@ export default function inputPath(config = {}) {
     enforce: 'pre',
     config(config) {
       let dirNames = fs.readdirSync('src/pages'), input = {}
-      dirNames.pop()
       dirNames.forEach((e) => {
         pageList[e] = `pages/${e}/`
         input[e] = resolve('src/pages', `${e}/index.html`)
@@ -28,5 +27,12 @@ export default function inputPath(config = {}) {
       }
       return html.replace('{{list}}', li)
     },
+    configureServer(server) {
+      server.watcher.on("add", handleFileChange);
+      server.watcher.on("unlink", handleFileChange);
+      function handleFileChange(file) {
+        /pages\\\w+\\index\.html/.test(file) ? server.restart() : ''
+      }
+    }
   }
 }
