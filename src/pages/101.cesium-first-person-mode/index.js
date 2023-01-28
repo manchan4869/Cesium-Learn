@@ -1,5 +1,6 @@
 import { cesiumIonAccessToken } from '@/config/accessToken'
 import '@/style/main.styl'
+import 'bootstrap/dist/css/bootstrap.min.css'
 Cesium.Ion.defaultAccessToken = cesiumIonAccessToken;
 
 import FirstPersonCameraMode from '@geoblocks/cesium-first-person-mode';

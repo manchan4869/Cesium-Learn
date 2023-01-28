@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "stylus": "^0.59.0",
     "vite": "^4.0.0"
   },
