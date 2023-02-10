@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/Cesium-Learn/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <script src="https://cdn.staticfile.org/cesium/1.101.0/Cesium.js"></script>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/cesium/1.101.0/Widgets/widgets.css">
+
+  <script type="module" crossorigin src="/Cesium-Learn/assets/103.viewshed-ee4d71a9.js"></script>
+  <link rel="modulepreload" crossorigin href="/Cesium-Learn/assets/modulepreload-polyfill-ec808ebb.js">
+  <link rel="modulepreload" crossorigin href="/Cesium-Learn/assets/accessToken-5e40def6.js">
+  <link rel="stylesheet" href="/Cesium-Learn/assets/index-12e27dd0.css">
+  <link rel="stylesheet" href="/Cesium-Learn/assets/bootstrap-48fa63fb.css">
+</head>
+
+<body>
+  <div id="cesiumContainer"></div>
+  <div id="toolbar" class="param-container tool-bar">
+    <button type="button" id="chooseView" class="button black cesium-button">绘制可视域</button>
+    <button type="button" id="cilpRegion" class="button black cesium-button">绘制裁剪面</button>
+    <button type="button" id="clear" class="button black cesium-button">清除</button>
+    <div class="param-item">
+      <b>裁剪模式：</b>
+      <select id="clip-mode" class="cesium-button">
+        <option value="keep-inside">保留区域内</option>
+        <option value="keep-outside">保留区域外</option>
+      </select>
+    </div>
+  </div>
+  <div id="wrapper" style="display:none">
+    <div id="login" class="animate form">
+      <span class="close" aria-hidden="true">×</span>
+      <form>
+        <h1>属性编辑</h1>
+        <p>
+        <div>
+          <label>方向(度)</label>
+          <input type="range" id="direction" min="0" max="360" step="1.0" title="方向"
+            data-bind="value: direction, valueUpdate: 'input'">
+          <input type="text" size="5" data-bind="value: direction">
+        </div>
+
+        <div>
+          <label>翻转(度)</label>
+          <input type="range" id="pitch" min="-90" max="90" step="1.0" value="1" title="翻转"
+            data-bind="value: pitch, valueUpdate: 'input'">
+          <input type="text" size="5" data-bind="value: pitch">
+        </div>
+
+        <div>
+          <label>距离(米)</label>
+          <input type="range" id="distance" min="1" max="500" step="1.0" value="1" title="距离"
+            data-bind="value: distance, valueUpdate: 'input'">
+          <input type="text" size="5" data-bind="value: distance">
+        </div>
+
+        <div>
+          <label>水平视场角(度)</label>
+          <input type="range" id="horizonalFov" min="1" max="120" step="1" value="1" title="水平视场角"
+            data-bind="value: horizontalFov, valueUpdate: 'input'">
+          <input type="text" size="5" data-bind="value: horizontalFov">
+        </div>
+
+        <div>
+          <label>垂直视场角(度)</label>
+          <input type="range" id="verticalFov" min="1" max="90" step="1.0" value="1" title="垂直视场角"
+            data-bind="value: verticalFov, valueUpdate: 'input'">
+          <input type="text" size="5" data-bind="value: verticalFov">
+        </div>
+        </p>
+        <p>
+        <div class="square square-left">
+          <label>可见区域颜色</label><input class="colorPicker" data-bind="value: visibleAreaColor,valueUpdate: 'input'"
+            id="colorPicker1" />
+        </div>
+        <div class="square square-right">
+          <label>不可见区域颜色</label><input class="colorPicker" data-bind="value: invisibleAreaColor,valueUpdate: 'input'"
+            id="colorPicker2" />
+        </div>
+        </p><br /><br />
+        <p><label>本例中观察者附加高度：1.8 米</label></p>
+      </form>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>
