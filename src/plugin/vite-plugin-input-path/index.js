@@ -31,7 +31,7 @@ export default function inputPath(config = {}) {
       server.watcher.on("add", handleFileChange);
       server.watcher.on("unlink", handleFileChange);
       function handleFileChange(file) {
-        /pages\\\w+\\index\.html/.test(file) ? server.restart() : ''
+        /pages\\(\w+\.?\w+)\\index\.html/.test(file) ? server.restart() : ''
       }
     }
   }
