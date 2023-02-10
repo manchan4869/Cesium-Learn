@@ -1,8 +1,8 @@
 import { cesiumIonAccessToken } from '@/config/accessToken'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './style.styl'
+import '@/style/main.styl'
 Cesium.Ion.defaultAccessToken = cesiumIonAccessToken;
 
+import './style.styl'
 const viewer = new Cesium.Viewer('cesiumContainer', {
   terrainProvider: Cesium.createWorldTerrain()
 });
